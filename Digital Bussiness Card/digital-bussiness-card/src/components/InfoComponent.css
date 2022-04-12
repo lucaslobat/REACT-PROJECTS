@@ -1,0 +1,90 @@
+:root {
+  --white: #ffffff;
+  --kinda-salmon: #f3bf99;
+  --kinda-grey: #f5f5f5;
+  --gray-700: #374151;
+  --linked-in: #5093e2;
+}
+
+.general-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  max-width: 25rem;
+  min-width: 25rem;
+}
+
+.main-container {
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1b21;
+  max-width: 25rem;
+  border-radius: 0.8rem;
+}
+
+.data-section {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.main-container-information {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container-name {
+  font-weight: 700;
+  line-height: 1.875rem;
+  font-size: 1.563;
+  color: var(--white);
+  margin: 0rem 2rem 0.5rem 2rem;
+}
+
+.main-container-occupation {
+  color: #f3bf99;
+  font-weight: 400;
+  line-height: 0.938;
+  font-size: 1rem;
+}
+
+.main-container-website {
+  color: var(--kinda-grey);
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 0.8rem;
+  margin: 1.2rem 0.9rem;
+}
+
+.main-container-buttons {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.button {
+  gap: 1rem;
+  padding: 0.8rem 2rem;
+  min-width: 2rem;
+  max-width: 8rem;
+  justify-content: center;
+  border: none;
+  border-radius: 0.375rem;
+}
+
+.email-button {
+  color: var(--gray-700);
+}
+.linkedin-button {
+  background-color: var(--linked-in);
+  color: var(--white);
+}
+
+.main-container-buttons__text {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
