@@ -1,0 +1,8 @@
+.card-body {
+  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 20rem;
+  background-color: #1a1b21;
+}

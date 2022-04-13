@@ -1,0 +1,18 @@
+.interests-component {
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.interests-h2 {
+  color: var(--about);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 150%;
+  margin: 1rem 0rem;
+}
+.interests-paragraph {
+  color: var(--paragraph);
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}

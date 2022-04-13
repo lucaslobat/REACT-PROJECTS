@@ -1,0 +1,10 @@
+.card-footer {
+  gap: 2rem;
+  background-color: #161619;
+  padding: 1.8rem 3rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2rem;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
