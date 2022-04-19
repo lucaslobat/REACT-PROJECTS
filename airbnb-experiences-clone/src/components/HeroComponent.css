@@ -1,0 +1,25 @@
+.hero__photos {
+  max-width: 80%;
+  margin-top: 2rem;
+  flex: 0 0 auto;
+}
+
+.hero__text {
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 80%;
+  align-self: flex-start;
+  padding: 2rem;
+}
+
+.hero__text__h1 {
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 110%;
+}
+
+.hero__text__paragraph {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 110%;
+}
