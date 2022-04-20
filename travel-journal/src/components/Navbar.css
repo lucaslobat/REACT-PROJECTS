@@ -1,0 +1,13 @@
+.navbar {
+  padding: 2rem;
+  justify-content: center;
+  background-color: #f55a5a;
+}
+
+.nav--content {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  color: white;
+}

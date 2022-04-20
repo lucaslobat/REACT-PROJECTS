@@ -1,0 +1,60 @@
+.travel-item {
+  max-width: 80rem;
+  padding: 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.travel-image {
+  width: 30%;
+  aspect-ratio: 1/1.3;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.travel-information {
+  padding: 1.5rem 0rem;
+  flex-direction: column;
+  width: 70%;
+  flex-grow: 1;
+}
+
+.location-span {
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.location-name {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 0.75rem;
+  letter-spacing: 0.17em;
+}
+
+.location-map {
+  color: #918e9b;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 0.75rem;
+}
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.875rem;
+}
+
+.item-date {
+  margin: 1rem 0rem;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 0.75rem;
+}
+
+.item-description {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+}
