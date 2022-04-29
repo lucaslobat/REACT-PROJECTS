@@ -64,3 +64,13 @@
 .form-button:active {
   transform: translateY(2px);
 }
+
+.image-container {
+  justify-content: center;
+  padding: 2rem;
+}
+
+.meme-image {
+  max-width: 100%;
+  border: 1px solid black;
+}
