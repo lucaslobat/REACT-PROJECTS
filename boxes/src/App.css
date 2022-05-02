@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.box-on {
+  background-color: #d8e2dc;
+}
+
+.box-off {
+  background-color: none;
+}
