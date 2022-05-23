@@ -15,7 +15,7 @@ function Form() {
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((res) => res.json())
-      .then((data) => setAllMemes(data.data.memes));
+      .then((res) => setAllMemes(res.data.memes));
   }, []);
 
   function handleButtonClick(e) {
@@ -23,16 +23,17 @@ function Form() {
     //Genera numero aleatório de 0 a 100;
     const randomNum = Math.floor(Math.random() * 100);
 
-    setMemeObject((prevArray) => {
-      return { ...prevArray, topText: "", bottomText: "" };
-    });
-
     /*Utiliza la función de estado para cambiar el valor de memeObject;
     Lo que hace es usar spread en sus propiedades y luego reasignar
     el valor de la propiedad randomImage al valor de la url de un
     elemento random del array allMemeImages.*/
     setMemeObject((prevState) => {
-      return { ...prevState, randomImage: allMemes[randomNum].url };
+      return {
+        ...prevState,
+        topText: "",
+        bottomText: "",
+        randomImage: allMemes[randomNum].url,
+      };
     });
   }
 

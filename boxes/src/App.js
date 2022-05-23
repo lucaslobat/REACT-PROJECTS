@@ -13,7 +13,7 @@ function App() {
    **/
   function handleToggle(e) {
     /* Recibe el id del elemento al que se le ha hecho clic y lo parse a un entero */
-    const elementoActual = parseInt(e.target.id);
+    const elementoActual = e;
 
     /**
      * La función de estado setArrayBoxes recibe una función callback
@@ -39,7 +39,8 @@ function App() {
    * para cada item del array, se le pasa como props el objeto del array
    */
   const boxElements = arrayBoxes.map((box) => {
-    return <Box toggle={handleToggle} key={box.id} box={box} />;
+    /* La prop "toggle" aquí es una closure, que devuelve una función, que recibe un parámetro de un scope externo  */
+    return <Box toggle={() => handleToggle(box.id)} key={box.id} on={box.on} />;
   });
 
   /* Renderiza el array de elementos <div> dentro de <main> */

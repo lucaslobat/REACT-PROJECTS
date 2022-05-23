@@ -4,15 +4,9 @@ function Box(props) {
    * en cada elemento del array para determinar
    * qué clase css aplicarle al elemento div.
    **/
-  const boxClass = props.box.on ? "box-on" : "box-off";
+  const boxClass = props.on ? "box-on" : "box-off";
 
-  return (
-    <div
-      className={`box ${boxClass}`}
-      id={props.box.id}
-      onClick={props.toggle}
-    ></div>
-  );
+  return <div className={`box ${boxClass}`} onClick={props.toggle}></div>;
 }
 
 export default Box;
