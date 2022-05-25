@@ -1,3 +1,7 @@
+:root {
+  --button-background: #4a4e74;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +12,25 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-button:focus {
-  outline: none;
+/* ##### 1st Screen (First Note) #### */
+
+.no-notes {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: whitesmoke;
+}
+.create-first-note-button {
+  cursor: pointer;
+  background-color: var(--button-background);
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 1rem;
 }
 
 .ql-editor p,
@@ -50,15 +71,6 @@ button:focus {
   border-radius: 3px;
   height: 30px;
   width: 30px;
-}
-
-.first-note {
-  cursor: pointer;
-  background-color: #4a4e74;
-  border: none;
-  color: white;
-  border-radius: 3px;
-  padding: 1rem;
 }
 
 .editor {
@@ -118,7 +130,8 @@ button:focus {
 }
 
 .gutter.gutter-horizontal {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+  /*   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+ */
 }
 
 .gutter.gutter-horizontal:hover {
@@ -127,14 +140,4 @@ button:focus {
 
 .split {
   display: flex;
-}
-
-.no-notes {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: whitesmoke;
 }
