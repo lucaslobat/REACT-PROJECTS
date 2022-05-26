@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /* ·········· Dependencies ·········· */
 import Split from "react-split";
@@ -14,8 +14,17 @@ import "./index.css";
 function App() {
   /* ·········· States ·········· */
 
-  // State that stores the notes objects in an array
-  const [notes, setNotes] = useState([]);
+  /*  State that stores the notes objects in an array,
+    its initialized with whatever is stored in the localStorage
+    as "notes" */
+
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   /* * * *
    * This state stores the note's current id,
@@ -30,12 +39,12 @@ function App() {
   function createNewNote() {
     const newNote = {
       id: nanoid(),
-      body: function () {
-        return ` # Note id : ${this.id}`;
+      get body() {
+        return `# Note ${notes.length + 1}`;
       },
     };
 
-    setNotes((prevNotes) => [newNote, ...prevNotes]);
+    setNotes((prevNotes) => [...prevNotes, newNote]);
     setCurrentNoteId(newNote.id);
   }
 
@@ -47,7 +56,14 @@ function App() {
     );
   }
 
+  /* * * *
+   * This function receives the editor's value, calls setNotes
+   * to reach notes prevState and iterate over notesArray,if it finds a note
+   * that corresponds to the currentNoteId it updates it's body property
+   * with the text and returns it, otherwise returns the note as it is.
+   * * *  */
   function editNote(text) {
+    console.log(text);
     setNotes((prevNotes) =>
       prevNotes.map((prevNote) => {
         return prevNote.id === currentNoteId

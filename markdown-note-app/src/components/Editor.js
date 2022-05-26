@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ReactMde from "react-mde";
 import showdown from "showdown";
 
@@ -20,7 +20,9 @@ function Editor({ currentNote, editNote }) {
   return (
     <section>
       <ReactMde
-        value={currentNote.body()}
+        value={currentNote.body}
+        /* onChange custom property receives a handler function , and passes
+        the value as parameter to it. */
         onChange={editNote}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
