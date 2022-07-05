@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 /* ·········· Dependencies ·········· */
 import Split from "react-split";
-import { nanoid } from "nanoid";
 
 /* ·········· Components ·········· */
 import Editor from "./components/Editor";
@@ -11,34 +10,45 @@ import Sidebar from "./components/Sidebar";
 /* ·········· Styles ·········· */
 import "./index.css";
 
+localStorage.clear();
+
 function App() {
-  /* ·········· States ·········· */
+  /* ·········· STATES ·········· */
 
-  /*  State that stores the notes objects in an array,
+  /*  
+    State that stores the notes objects in an array,
     its initialized with whatever is stored in the localStorage
-    as "notes" */
-
+    as "notes" otherwise its initialized as an empty array.
+      */
   const [notes, setNotes] = useState(
     JSON.parse(localStorage.getItem("notes")) || []
   );
 
-  useEffect(() => {
-    localStorage.setItem("notes", JSON.stringify(notes));
-  }, [notes]);
-
-  /* * * *
-   * This state stores the note's current id,
-   * the default value is the first note id if it exists,
-   * otherwise its an empty string.
-   * * *  */
+  /*  
+    This state stores the note's current id, the default
+    value is the first note id if it exists, otherwise its
+    an empty string
+      */
   const [currentNoteId, setCurrentNoteId] = useState(
     (notes[0] && notes[0].id) || ""
   );
 
+  console.log(currentNoteId);
+
+  /* ·········· ENF OF STATES ·········· */
+
+  /*  
+    When the app is initialized, and when "notes" change,
+    it sets a item in the localStorage equals to the "notes" state variable
+      */
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
+
   /* ·········· Functions ·········· */
   function createNewNote() {
     const newNote = {
-      id: nanoid(),
+      id: notes.length + 1 ,
       get body() {
         return `# Note ${notes.length + 1}`;
       },

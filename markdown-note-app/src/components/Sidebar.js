@@ -1,5 +1,5 @@
 function Sidebar(props) {
-  const noteElements = props.notes.map((note, index) => (
+  const notesElements = props.notes.map((note, index) => (
     <div key={note.id}>
       <div
         className={`title ${
@@ -11,6 +11,7 @@ function Sidebar(props) {
       </div>
     </div>
   ));
+
   return (
     <section className="pane sidebar">
       <div className="sidebar--header">
@@ -19,7 +20,7 @@ function Sidebar(props) {
           +
         </button>
       </div>
-      {noteElements}
+      {notesElements}
     </section>
   );
 }
