@@ -15,10 +15,7 @@ function ExpenseItem(props) {
     <Container className="expense-item">
       <div>{props.date}</div>
       <div>{props.body}</div>
-      <div>
-        {props.price}
-        <button onClick={changeTitle}>Change title</button>
-      </div>
+      <div>{props.price}</div>
     </Container>
   );
 }

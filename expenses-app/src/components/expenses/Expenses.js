@@ -3,7 +3,7 @@ import ExpenseItem from "./ExpenseItem";
 
 import "./Expenses.css";
 
-function Expenses() {
+function Expenses(props) {
   const expensesArray = [
     {
       id: 1,
@@ -26,7 +26,16 @@ function Expenses() {
     );
   });
 
-  return <Container className="expenses">{expenses}</Container>;
+  function addExpenseHandler() {
+    props.setShowModal((prevValue) => !prevValue);
+  }
+
+  return (
+    <Container className="expenses">
+      <button onClick={addExpenseHandler}>Add new expense</button>
+      {expenses}
+    </Container>
+  );
 }
 
 export default Expenses;
