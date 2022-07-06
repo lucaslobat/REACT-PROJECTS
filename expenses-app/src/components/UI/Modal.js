@@ -12,7 +12,7 @@ function Modal(props) {
         <span class="close" onClick={closeHandler}>
           &times;
         </span>
-        <p>Some text in the Modal..</p>
+        {props.children}
       </div>
     </Container>
   );
