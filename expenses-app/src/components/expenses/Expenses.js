@@ -32,7 +32,9 @@ function Expenses(props) {
 
   return (
     <Container className="expenses">
-      <button onClick={addExpenseHandler}>Add new expense</button>
+      <button className="flex add-expense-button" onClick={addExpenseHandler}>
+        ✎
+      </button>
       {expenses}
     </Container>
   );

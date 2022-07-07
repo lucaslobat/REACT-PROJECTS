@@ -6,10 +6,11 @@ function Modal(props) {
   function closeHandler() {
     props.setShowModal((prevValue) => !prevValue);
   }
+
   return (
     <Container className="modal-container">
-      <div class="flex modal-content">
-        <span class="close" onClick={closeHandler}>
+      <div className="flex modal-content">
+        <span className="close" onClick={closeHandler}>
           &times;
         </span>
         {props.children}
