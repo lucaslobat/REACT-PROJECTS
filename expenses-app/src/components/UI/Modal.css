@@ -10,12 +10,18 @@
   flex-direction: column;
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.modal-header {
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaaaaa;
+  margin-bottom: 1.5rem;
 }
 
 .close {
-  align-self: flex-end;
   font-size: 2rem;
   font-weight: bold;
   color: #aaaaaa;

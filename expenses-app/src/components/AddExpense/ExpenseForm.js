@@ -23,12 +23,14 @@ function ExpenseForm(props) {
 
   function onSubmitHandler(e) {
     e.preventDefault();
-    console.log(expenseObject);
+
     setExpenseObject({ id: "", date: "", body: "", price: "" });
+
+    props.setShowModal((prevState) => !prevState);
   }
 
   return (
-    <Modal setShowModal={props.setShowModal}>
+    <Modal title={"Add expense"} setShowModal={props.setShowModal}>
       <form onSubmit={onSubmitHandler} className="flex expense-form">
         <div className=" flex form-field">
           <label htmlFor="expense-date">Select expense's date</label>
@@ -67,7 +69,7 @@ function ExpenseForm(props) {
             value={expenseObject.price}
           />
         </div>
-        <button className="flex add-submit-button">+</button>
+        <button className="flex add-submit-button">Add expense</button>
       </form>
     </Modal>
   );

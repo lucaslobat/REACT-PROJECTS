@@ -10,9 +10,12 @@ function Modal(props) {
   return (
     <Container className="modal-container">
       <div className="flex modal-content">
-        <span className="close" onClick={closeHandler}>
-          &times;
-        </span>
+        <div className="flex modal-header">
+          <h2>{props.title}</h2>
+          <span className="close" onClick={closeHandler}>
+            &times;
+          </span>
+        </div>
         {props.children}
       </div>
     </Container>
