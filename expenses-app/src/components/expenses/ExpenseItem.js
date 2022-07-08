@@ -1,16 +1,8 @@
-import { useState } from "react";
-
 import Container from "../UI/Container";
 
 import "./ExpenseItem.css";
 
 function ExpenseItem(props) {
-  const [body, setBody] = useState(props.body);
-
-  function changeTitle() {
-    console.log(body);
-  }
-
   return (
     <Container className="expense-item">
       <div>{props.date}</div>

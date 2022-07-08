@@ -5,6 +5,7 @@ import Modal from "../UI/Modal";
 import "./ExpenseForm.css";
 
 function ExpenseForm(props) {
+  /* STATES */
   const [expenseObject, setExpenseObject] = useState({
     id: "",
     date: "",
@@ -12,17 +13,26 @@ function ExpenseForm(props) {
     price: "",
   });
 
+  /* HANDLERS */
   function onChangeHandler(e) {
-    const inputName = e.target.name;
+    let inputName = e.target.name;
     const inputValue = e.target.value;
 
     setExpenseObject((prevState) => {
-      return { ...prevState, [inputName]: inputValue };
+      return {
+        ...prevState,
+        [inputName]: inputValue,
+        id: props.expensesState.length + 1,
+      };
     });
   }
 
   function onSubmitHandler(e) {
     e.preventDefault();
+
+    props.setExpensesState((prevState) => {
+      return [...prevState, expenseObject];
+    });
 
     setExpenseObject({ id: "", date: "", body: "", price: "" });
 
