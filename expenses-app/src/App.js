@@ -2,27 +2,24 @@ import { useState } from "react";
 
 import Expenses from "./components/expenses/Expenses";
 import ExpenseForm from "./components/AddExpense/ExpenseForm";
+import AddButton from "./components/UI/AddButton";
 
 import "./App.css";
 
 function App() {
   /* VARIABLES AND CONSTANTS */
-  const expensesArray = [
-    {
-      id: 1,
-      date: "04/07/2022",
-      body: "Tortillas 100% integrales",
-      price: 1.7,
-    },
-    { id: 2, date: "04/07/2022", body: "Bebida de Avena", price: 0.9 },
-    { id: 3, date: "04/07/2022", body: "Crema 100% cacahuete", price: 3.1 },
-  ];
+  const expensesArray = [];
 
   /* STATES */
   const [expensesState, setExpensesState] = useState(expensesArray);
   const [showModal, setShowModal] = useState(false);
 
+  function modalHandler() {
+    setShowModal((prevState) => !prevState);
+  }
+
   console.log(expensesState);
+
   return (
     <>
       {showModal && (
@@ -32,7 +29,21 @@ function App() {
           expensesState={expensesState}
         />
       )}
-      <Expenses expensesState={expensesState} setShowModal={setShowModal} />
+
+      {expensesState.length !== 0 ? (
+        <Expenses
+          expensesState={expensesState}
+          setShowModal={setShowModal}
+          showModal={showModal}
+        />
+      ) : (
+        <div className="no-expenses flex">
+          Currently you have no expenses
+          <AddButton className="first-expense-button" onClick={modalHandler}>
+            Add expense
+          </AddButton>
+        </div>
+      )}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Container from "../UI/Container";
 import ExpenseItem from "./ExpenseItem";
+import AddButton from "../UI/AddButton";
 
 import "./Expenses.css";
 
@@ -21,9 +22,12 @@ function Expenses(props) {
 
   return (
     <Container className="expenses">
-      <button className="flex add-expense-button" onClick={addExpenseHandler}>
-        ✎
-      </button>
+      <AddButton
+        className="flex new-expense-button"
+        onClick={addExpenseHandler}
+      >
+        +
+      </AddButton>
       {expenses}
     </Container>
   );
