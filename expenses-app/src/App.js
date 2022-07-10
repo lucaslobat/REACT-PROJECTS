@@ -18,8 +18,6 @@ function App() {
     setShowModal((prevState) => !prevState);
   }
 
-  console.log(expensesState);
-
   return (
     <>
       {showModal && (

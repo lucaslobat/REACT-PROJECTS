@@ -5,23 +5,25 @@ import Modal from "../UI/Modal";
 import "./ExpenseForm.css";
 
 function ExpenseForm(props) {
-  /* STATES */
-  const [expenseObject, setExpenseObject] = useState({
+  const expenseValues = {
     id: "",
     date: "",
     body: "",
     price: "",
-  });
+  };
+
+  /* STATES */
+  const [expenseObject, setExpenseObject] = useState(expenseValues);
+  const [formErrors, setFormErrors] = useState({});
 
   /* HANDLERS */
   function onChangeHandler(e) {
-    let inputName = e.target.name;
-    const inputValue = e.target.value;
+    const { name, value } = e.target;
 
     setExpenseObject((prevState) => {
       return {
         ...prevState,
-        [inputName]: inputValue,
+        [name]: value,
         id: props.expensesState.length + 1,
       };
     });
@@ -30,17 +32,42 @@ function ExpenseForm(props) {
   function onSubmitHandler(e) {
     e.preventDefault();
 
+    // Add the expenseObject to EXPENSES STATE
     props.setExpensesState((prevState) => {
       return [...prevState, expenseObject];
     });
 
+    // Clear the fields from the inputs
     setExpenseObject({ id: "", date: "", body: "", price: "" });
 
+    // Close the Modal
     props.setShowModal((prevState) => !prevState);
+
+    // Set the form errors
+    setFormErrors(validateForm(expenseObject));
+  }
+
+  function validateForm(expenseValues) {
+    const errors = {};
+
+    if (!expenseValues.date) {
+      errors.dateError = "A date is required";
+    }
+
+    if (!expenseValues.body) {
+      errors.bodyError = "A title is required";
+    }
+
+    if (!expenseValues.price) {
+      errors.priceError = "A price is required";
+    }
+
+    return errors;
   }
 
   return (
     <Modal title={"Add expense"} setShowModal={props.setShowModal}>
+      <pre>{JSON.stringify(expenseObject, undefined, 2)}</pre>
       <form onSubmit={onSubmitHandler} className="flex expense-form">
         <div className=" flex form-field">
           <label htmlFor="expense-date">Select expense's date</label>
