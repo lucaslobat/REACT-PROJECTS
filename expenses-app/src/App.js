@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Expenses from "./components/expenses/Expenses";
 import ExpenseForm from "./components/AddExpense/ExpenseForm";
@@ -7,12 +7,16 @@ import AddButton from "./components/UI/AddButton";
 import "./App.css";
 
 function App() {
-  /* VARIABLES AND CONSTANTS */
-  const expensesArray = [];
+  const parsedArray = JSON.parse(localStorage.getItem("expenses"));
 
   /* STATES */
-  const [expensesState, setExpensesState] = useState(expensesArray);
+  const [expensesState, setExpensesState] = useState(parsedArray || []);
   const [showModal, setShowModal] = useState(false);
+
+  /* This effect sets expensesArray to localStorage with the key "expenses"*/
+  useEffect(() => {
+    localStorage.setItem("expenses", JSON.stringify(expensesState));
+  }, [expensesState]);
 
   function modalHandler() {
     setShowModal((prevState) => !prevState);
@@ -30,9 +34,9 @@ function App() {
 
       {expensesState.length !== 0 ? (
         <Expenses
-          expensesState={expensesState}
           setShowModal={setShowModal}
           showModal={showModal}
+          expensesState={expensesState}
         />
       ) : (
         <div className="no-expenses flex">
