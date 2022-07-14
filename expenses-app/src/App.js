@@ -7,19 +7,32 @@ import AddButton from "./components/UI/AddButton";
 import "./App.css";
 
 function App() {
+  /* # # # VARIABLES # # # */
+  //This variable gets "expenses" from localStorage and parse it to an object.
   const parsedArray = JSON.parse(localStorage.getItem("expenses"));
 
-  /* STATES */
+  /* # # # STATES # # # */
+  // Array state where all expenses are added
   const [expensesState, setExpensesState] = useState(parsedArray || []);
+
+  // On this state we can modify if we are showing a modal or not;
   const [showModal, setShowModal] = useState(false);
 
-  /* This effect sets expensesArray to localStorage with the key "expenses"*/
+  /* # # # EFFECTS # # # */
+
+  /* Sets expensesState to localStorage as "expenses", once the app is loaded
+  and after every state change*/
   useEffect(() => {
     localStorage.setItem("expenses", JSON.stringify(expensesState));
   }, [expensesState]);
 
+  /* # # # FUNCTIONS # # # */
   function modalHandler() {
     setShowModal((prevState) => !prevState);
+  }
+
+  function deleteExpenseHandler(e, expenseId) {
+    console.log(e, expenseId);
   }
 
   return (
@@ -37,6 +50,7 @@ function App() {
           setShowModal={setShowModal}
           showModal={showModal}
           expensesState={expensesState}
+          deleteExpenseHandler={deleteExpenseHandler}
         />
       ) : (
         <div className="no-expenses flex">

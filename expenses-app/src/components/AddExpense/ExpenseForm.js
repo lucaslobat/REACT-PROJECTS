@@ -11,6 +11,7 @@ function ExpenseForm(props) {
     date: "",
     title: "",
     price: "",
+    quantity: 0,
   };
 
   /* STATES */
@@ -38,7 +39,7 @@ function ExpenseForm(props) {
     });
 
     // Clear the fields from the inputs
-    setExpenseObject({ id: "", date: "", title: "", price: "" });
+    setExpenseObject({ id: "", date: "", title: "", price: "", quantity: 0 });
 
     // Close the Modal
     props.setShowModal((prevState) => !prevState);
@@ -66,15 +67,24 @@ function ExpenseForm(props) {
       placeholder: "Enter the expense's price",
       label: "price",
     },
+    {
+      id: 4,
+      name: "quantity",
+      type: "number",
+      placeholder: "Enter the quantity",
+      label: "quantity",
+      min: "1",
+      max: "100",
+    },
   ];
 
   const inputElements = inputObjects.map((item) => {
     return (
       <ExpenseInput
         key={item.id}
-        {...item}
         value={expenseObject[item.name]}
         onChangeHandler={onChangeHandler}
+        {...item}
       />
     );
   });

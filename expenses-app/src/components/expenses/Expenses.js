@@ -9,10 +9,31 @@ function Expenses(props) {
     return (
       <ExpenseItem
         key={item.id}
+        id={item.id}
         title={item.title}
         price={item.price}
         date={item.date}
+        quantity={item.quantity}
+        deleteExpenseHandler={props.deleteExpenseHandler}
       />
+    );
+  });
+
+  let dates = new Set();
+
+  expenses.forEach((expense) => dates.add(expense.props.date));
+
+  dates = [...dates];
+
+  const expensesGroup = dates.map((date) => {
+    return (
+      <div>
+        {date}
+        <hr />
+        {expenses.filter((expenseItem) => {
+          return expenseItem.props.date === date;
+        })}
+      </div>
     );
   });
 
@@ -28,7 +49,7 @@ function Expenses(props) {
       >
         +
       </AddButton>
-      {expenses}
+      {expensesGroup}
     </Container>
   );
 }

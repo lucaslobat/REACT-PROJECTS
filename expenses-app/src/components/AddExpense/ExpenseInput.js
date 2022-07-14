@@ -10,6 +10,8 @@ function ExpenseInput(props) {
         placeholder={props.placeholder}
         onChange={props.onChangeHandler}
         value={props.value}
+        min={props.min}
+        max={props.max}
         required
       />
     </div>
