@@ -32,7 +32,9 @@ function App() {
   }
 
   function deleteExpenseHandler(e, expenseId) {
-    console.log(e, expenseId);
+    setExpensesState((prevState) =>
+      expensesState.filter((expense) => expense.id !== expenseId)
+    );
   }
 
   return (

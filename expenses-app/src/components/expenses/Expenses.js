@@ -27,7 +27,7 @@ function Expenses(props) {
 
   const expensesGroup = dates.map((date) => {
     return (
-      <div>
+      <div key={dates.indexOf(date)}>
         {date}
         <hr />
         {expenses.filter((expenseItem) => {
