@@ -27,13 +27,17 @@ function App() {
   }, [expensesState]);
 
   /* # # # FUNCTIONS # # # */
+
+  // Changes showModal state showing or hiding ExpenseForm
   function modalHandler() {
     setShowModal((prevState) => !prevState);
   }
 
+  /* Set a new state where if expense.id coincides with expenseId received
+   from ExpenseItem is excluded from such state. */
   function deleteExpenseHandler(e, expenseId) {
     setExpensesState((prevState) =>
-      expensesState.filter((expense) => expense.id !== expenseId)
+      prevState.filter((expense) => expense.id !== expenseId)
     );
   }
 

@@ -1,0 +1,23 @@
+.navbar-component {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 80px -12px;
+}
+.logo-container {
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.budiet-logo {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 3rem;
+}
+
+.budiet-span {
+  font-weight: 900;
+  letter-spacing: 0.18rem;
+  font-size: 1.2rem;
+}
