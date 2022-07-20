@@ -1,0 +1,30 @@
+.user-information-card {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 65vw;
+  padding: 2rem;
+  margin-top: 6rem;
+}
+
+.user-profile-image {
+  border-radius: 50%;
+  width: 6rem;
+}
+
+.user-information-container {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.user-information-title {
+  align-self: flex-start;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
