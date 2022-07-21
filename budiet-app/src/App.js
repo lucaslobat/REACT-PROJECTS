@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 import Navbar from "./components/Navbar";
+import FormulaForm from "./components/FormulaForm";
+import UserInformation from "./components/UserInformation";
 
 import "./App.css";
-import UserInformation from "./components/UserInformation";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -16,6 +17,7 @@ function App() {
     <>
       <Navbar />
       <UserInformation toggleShowModal={toggleShowModal} />
+      {showModal && <FormulaForm toggleShowModal={toggleShowModal} />}
     </>
   );
 }
