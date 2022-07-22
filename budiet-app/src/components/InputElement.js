@@ -6,7 +6,7 @@ function InputElement(props) {
   props.options ? (optionKeys = Object.keys(props.options)) : (optionKeys = []);
 
   const optionElements = optionKeys.map((item) => {
-    return <option>{props.options[item]}</option>;
+    return <option key={item}>{props.options[item]}</option>;
   });
   return (
     <div className="flex form-input">
@@ -14,8 +14,9 @@ function InputElement(props) {
         <>
           <label htmlFor={props.name}>{props.label}</label>
           <input
+            key={props.id}
             name={props.name}
-            type={props.type}
+            type={props.typeAtt}
             placeholder={props.placeholder}
             onChange={props.onChangeHandler}
             value={props.value}
@@ -25,7 +26,14 @@ function InputElement(props) {
       ) : (
         <>
           <label htmlFor={props.name}>{props.label}</label>
-          <select>{optionElements}</select>
+          <select
+            name={props.name}
+            onChange={props.onChangeHandler}
+            value={props.value}
+            required
+          >
+            {optionElements}
+          </select>
         </>
       )}
     </div>
