@@ -4,6 +4,7 @@ import "./FormulaForm.css";
 
 import Modal from "../ui/Modal";
 import InputElement from "./InputElement";
+import Button from "../ui/Button";
 
 function FormulaForm(props) {
   const [userData, setUserData] = useState({
@@ -18,38 +19,20 @@ function FormulaForm(props) {
   const inputObjects = [
     {
       id: 1,
-      name: "name",
-      type: "text",
-      placeholder: "Enter your name",
+      tagType: "input",
+      nameAtt: "name",
+      typeAtt: "text",
       label: "name",
     },
     {
       id: 2,
-      name: "gender",
-      type: "text",
-      placeholder: "Enter your gender",
+      tagType: "select",
+      nameAtt: "gender",
       label: "gender",
-    },
-    {
-      id: 3,
-      name: "weight",
-      type: "number",
-      placeholder: "Enter your weight in kg",
-      label: "weight",
-    },
-    {
-      id: 4,
-      name: "height",
-      type: "number",
-      placeholder: "Enter your height in cm",
-      label: "height",
-    },
-    {
-      id: 5,
-      name: "age",
-      type: "number",
-      placeholder: "Enter your age",
-      label: "age",
+      options: {
+        0: "Male",
+        1: "Female",
+      },
     },
   ];
 
@@ -78,7 +61,10 @@ function FormulaForm(props) {
   return (
     <Modal toggleShowModal={props.toggleShowModal}>
       <pre>{JSON.stringify(userData, undefined, 2)}</pre>
-      <form className="flex user-data-form">{inputElements}</form>
+      <form className="flex user-data-form">
+        {inputElements}
+        <Button>Calculate TDEE</Button>
+      </form>
     </Modal>
   );
 }
