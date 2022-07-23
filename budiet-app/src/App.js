@@ -8,6 +8,14 @@ import "./App.css";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [userData, setUserData] = useState({
+    name: "",
+    gender: "Male",
+    weight: "",
+    height: "",
+    age: "",
+    pal: "0",
+  });
 
   function toggleShowModal() {
     setShowModal((prevState) => !prevState);
@@ -16,8 +24,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <UserInformation toggleShowModal={toggleShowModal} />
-      {showModal && <FormulaForm toggleShowModal={toggleShowModal} />}
+      <UserInformation toggleShowModal={toggleShowModal} userData={userData} />
+      {showModal && (
+        <FormulaForm
+          toggleShowModal={toggleShowModal}
+          userData={userData}
+          setUserData={setUserData}
+        />
+      )}
     </>
   );
 }

@@ -1,21 +1,9 @@
-import { useState } from "react";
-
 import "./FormulaForm.css";
 
 import Modal from "../ui/Modal";
 import InputElement from "./InputElement";
-import Button from "../ui/Button";
 
 function FormulaForm(props) {
-  const [userData, setUserData] = useState({
-    id: "",
-    name: "",
-    gender: "",
-    weight: "",
-    height: "",
-    age: "",
-  });
-
   const inputObjects = [
     {
       id: 1,
@@ -42,7 +30,7 @@ function FormulaForm(props) {
       tagType: "input",
       nameAtt: "weight",
       typeAtt: "number",
-      label: "weight",
+      label: "weight(kg)",
     },
     {
       id: 4,
@@ -50,7 +38,7 @@ function FormulaForm(props) {
       tagType: "input",
       nameAtt: "height",
       typeAtt: "number",
-      label: "height",
+      label: "height(cm)",
     },
     {
       id: 5,
@@ -60,6 +48,21 @@ function FormulaForm(props) {
       typeAtt: "number",
       label: "age",
     },
+    {
+      id: 6,
+      name: "pal",
+      tagType: "select",
+      nameAtt: "pal",
+      label: "PAL",
+      options: {
+        0: "Little/no exercise (sedentary lifestyle)",
+        1: "Light exercise 1-2 times a week",
+        2: "Moderate exercise 2-3 times a week",
+        3: "Hard exercise 4-5 times a week",
+        4: "Physical job or hard exercise 6-7 times a week",
+        5: "Professional athlete",
+      },
+    },
   ];
 
   const inputElements = inputObjects.map((item) => {
@@ -67,7 +70,7 @@ function FormulaForm(props) {
       <InputElement
         key={item.id}
         onChangeHandler={onChangeHandler}
-        value={userData[item.name]}
+        value={props.userData[item.name]}
         {...item}
       />
     );
@@ -76,7 +79,7 @@ function FormulaForm(props) {
   function onChangeHandler(e) {
     const { name, value } = e.target;
 
-    setUserData((prevState) => {
+    props.setUserData((prevState) => {
       return {
         ...prevState,
         [name]: value,
@@ -84,12 +87,15 @@ function FormulaForm(props) {
     });
   }
 
+  function handleButton(e) {
+    props.toggleShowModal();
+  }
+
   return (
     <Modal toggleShowModal={props.toggleShowModal}>
-      <pre>{JSON.stringify(userData, undefined, 2)}</pre>
       <form className="flex user-data-form">
         {inputElements}
-        <Button>Calculate TDEE</Button>
+        <button onClick={handleButton}>Calculate TDEE</button>
       </form>
     </Modal>
   );
