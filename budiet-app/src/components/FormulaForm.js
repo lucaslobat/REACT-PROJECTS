@@ -1,9 +1,17 @@
 import "./FormulaForm.css";
-
+import { useState } from "react";
 import Modal from "../ui/Modal";
 import InputElement from "./InputElement";
 
 function FormulaForm(props) {
+  const [userObject, setUserObject] = useState({
+    name: "",
+    gender: "Male",
+    weight: "",
+    height: "",
+    age: "",
+    pal: "0",
+  });
   const inputObjects = [
     {
       id: 1,
@@ -55,12 +63,12 @@ function FormulaForm(props) {
       nameAtt: "pal",
       label: "PAL",
       options: {
-        0: "Little/no exercise (sedentary lifestyle)",
-        1: "Light exercise 1-2 times a week",
-        2: "Moderate exercise 2-3 times a week",
-        3: "Hard exercise 4-5 times a week",
-        4: "Physical job or hard exercise 6-7 times a week",
-        5: "Professional athlete",
+        1.2: "Little/no exercise (sedentary lifestyle)",
+        1.375: "Light exercise 1-2 times a week",
+        1.55: "Moderate exercise 2-3 times a week",
+        1.725: "Hard exercise 4-5 times a week",
+        1.9: "Physical job or hard exercise 6-7 times a week",
+        2.0: "Professional athlete",
       },
     },
   ];
@@ -70,7 +78,7 @@ function FormulaForm(props) {
       <InputElement
         key={item.id}
         onChangeHandler={onChangeHandler}
-        value={props.userData[item.name]}
+        value={userObject[item.name]}
         {...item}
       />
     );
@@ -79,7 +87,7 @@ function FormulaForm(props) {
   function onChangeHandler(e) {
     const { name, value } = e.target;
 
-    props.setUserData((prevState) => {
+    setUserObject((prevState) => {
       return {
         ...prevState,
         [name]: value,
@@ -87,15 +95,30 @@ function FormulaForm(props) {
     });
   }
 
-  function handleButton(e) {
-    props.toggleShowModal();
+  function onSubmitHandler(e) {
+    e.preventDefault();
+
+    props.setUserData((prevState) => {
+      return [...prevState, userObject];
+    });
+
+    setUserObject({
+      name: "",
+      gender: "Male",
+      weight: "",
+      height: "",
+      age: "",
+      pal: "0",
+    });
+
+    props.toggleShowModal((prevState) => !prevState);
   }
 
   return (
     <Modal toggleShowModal={props.toggleShowModal}>
-      <form className="flex user-data-form">
+      <form onSubmit={onSubmitHandler} className="flex user-data-form">
         {inputElements}
-        <button onClick={handleButton}>Calculate TDEE</button>
+        <button>Calculate TDEE</button>
       </form>
     </Modal>
   );

@@ -75,3 +75,8 @@
   background-color: #008cba;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+.caloric-information {
+  flex-direction: column;
+  gap: 0.8rem;
+}
