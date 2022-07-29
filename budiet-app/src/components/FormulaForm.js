@@ -11,7 +11,9 @@ function FormulaForm(props) {
     height: "",
     age: "",
     pal: "0",
+    dietPlan: "",
   });
+
   const inputObjects = [
     {
       id: 1,
@@ -71,17 +73,54 @@ function FormulaForm(props) {
         2.0: "Professional athlete",
       },
     },
+    {
+      id: 7,
+      name: "dietPlan",
+      tagType: "input",
+      nameAtt: "dietPlan",
+      typeAtt: "radio",
+      label: "Lose weight",
+      value: "lose weight",
+    },
+    {
+      id: 8,
+      name: "dietPlan",
+      tagType: "input",
+      nameAtt: "dietPlan",
+      typeAtt: "radio",
+      label: "Gain weight ",
+      value: "gain weight",
+    },
   ];
 
   const inputElements = inputObjects.map((item) => {
-    return (
-      <InputElement
-        key={item.id}
-        onChangeHandler={onChangeHandler}
-        value={userObject[item.name]}
-        {...item}
-      />
-    );
+    if (item.name === "dietPlan") {
+      return (
+        <InputElement
+          key={item.id}
+          onChangeHandler={onChangeHandler}
+          value={item.value}
+          {...item}
+        />
+      );
+    } else {
+      return (
+        <InputElement
+          key={item.id}
+          onChangeHandler={onChangeHandler}
+          value={userObject[item.name]}
+          {...item}
+        />
+      );
+    }
+  });
+
+  const inputsWithoutRadioButtons = inputElements.map((item) => {
+    return item.props.name !== "dietPlan" && item;
+  });
+
+  const radioButtonInputs = inputElements.map((item) => {
+    return item.props.name === "dietPlan" && item;
   });
 
   function onChangeHandler(e) {
@@ -117,7 +156,11 @@ function FormulaForm(props) {
   return (
     <Modal toggleShowModal={props.toggleShowModal}>
       <form onSubmit={onSubmitHandler} className="flex user-data-form">
-        {inputElements}
+        {inputsWithoutRadioButtons}
+        <fieldset>
+          <legend>Select your diet goals:</legend>
+          {radioButtonInputs}
+        </fieldset>
         <button>Calculate TDEE</button>
       </form>
     </Modal>
