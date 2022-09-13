@@ -8,7 +8,10 @@ function Modal(props) {
       <div className="flex modal-content">
         <div className="flex modal-header">
           <h2>{props.title}</h2>
-          <span className="close" onClick={props.toggleShowModal}>
+          <span
+            className="close"
+            onClick={() => props.toggleShowModal((prevState) => !prevState)}
+          >
             &times;
           </span>
         </div>
