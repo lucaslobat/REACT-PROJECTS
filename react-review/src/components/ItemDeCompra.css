@@ -1,0 +1,7 @@
+.item-de-compra {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: space-between;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
