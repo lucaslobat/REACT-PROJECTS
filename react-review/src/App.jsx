@@ -21,7 +21,12 @@ function App() {
       descripcion: "Burrito Taconacho",
       importe: 5.5,
     },
-    { id: "i3", fecha: fechaFinal, descripcion: "Piñas colada", importe: 10 },
+    {
+      id: "i3",
+      fecha: fechaFinal,
+      descripcion: "Piña colada x2",
+      importe: 10,
+    },
   ];
 
   const mappedItemsDeCompra = itemsDeCompra.map((item, index) => {
@@ -35,7 +40,7 @@ function App() {
     );
   });
 
-  return mappedItemsDeCompra;
+  return <div>{mappedItemsDeCompra}</div>;
 }
 
 export default App;

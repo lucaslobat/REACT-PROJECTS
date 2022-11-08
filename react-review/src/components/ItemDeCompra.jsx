@@ -1,11 +1,16 @@
 import "./ItemDeCompra.css";
 
 function ItemDeCompra(props) {
+  const changeTituloHandler = () => {
+    console.log("Click!");
+  };
+
   return (
     <div className="item-de-compra">
-      <div className="item-de-compra__fecha">{props.fecha}</div>
-      <div className="item-de-compra__descripción">{props.descripcion}</div>
-      <div className="item-de-compra__importe">{props.importe}</div>
+      <div className="aligned">{props.fecha}</div>
+      <div className="aligned">{props.descripcion}</div>
+      <div className="aligned">{props.importe}</div>
+      <button onClick={changeTituloHandler}>Cambiar título</button>
     </div>
   );
 }
