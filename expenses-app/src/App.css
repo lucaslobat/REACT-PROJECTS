@@ -1,9 +1,0 @@
-.no-expenses {
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.first-expense-button {
-  padding: 1rem;
-  background-color: #008cba;
-}
