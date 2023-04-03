@@ -11,4 +11,10 @@
 
 .airbnb-logo {
   width: 7rem;
+  
+}
+
+.airbnb-logo-container{
+  width:85%;
+  padding:0rem 0rem 0rem 8rem;
 }

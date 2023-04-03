@@ -6,8 +6,15 @@
   flex: 0 0 auto;
 }
 
+.card-body {
+  flex-direction: column;
+  justify-content: space-between;
+  flex:1;
+  gap:0.2rem;
+}
+
 .card-image {
-  width: 100%;
+  width: 85%;
 }
 
 .card-star {
@@ -32,7 +39,9 @@
 
 .card-information {
   flex-direction: column;
+  gap:2rem;
 }
+
 
 .card-price {
   font-weight: 700;

@@ -5,7 +5,11 @@ import image4 from "../images/exp2.jpg";
 import image5 from "../images/exp3.jpg";
 import image6 from "../images/exp4.jpg";
 
-const cardsArray = [
+import nov1 from "../images/novedades1.png";
+import nov2 from "../images/novedades2.jpg";
+import nov3 from "../images/novedades3.jpg";
+
+const experiencesCardsArray = [
   {
     id: 1,
     image: image1,
@@ -62,4 +66,20 @@ const cardsArray = [
   },
 ];
 
-export default cardsArray;
+export const novedadesArray = [{
+  id: 1,
+  image: nov1,
+  titulo: "Más populares en todo el mundo"
+}, {
+  id: 2,
+  image: nov2,
+  titulo: "Ideales para fomentarel espíritu de equipo"
+},
+{
+  id: 3,
+  image: nov3,
+  titulo: "Diversión para toda la família"
+}
+]
+
+export default experiencesCardsArray;

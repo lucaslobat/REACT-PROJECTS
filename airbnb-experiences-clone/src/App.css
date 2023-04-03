@@ -1,14 +1,25 @@
-.header {
+.container{
   flex-direction: column;
   align-items: center;
 }
+
+.page-body{
+  flex-direction: column;
+  width:85%;
+  border:3px solid greenyellow;
+}
+.header {
+  flex-direction: column;
+  align-items: center;
+  margin:2rem;
+}
 .cards-container {
-  padding: 2rem;
   gap: 2rem;
-  width: 80%;
   overflow: auto;
 }
 
 .experiences-section {
-  justify-content: center;
+  flex-direction: column;
+  border:4px solid red;
+  gap:1rem;
 }

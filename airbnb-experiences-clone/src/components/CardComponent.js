@@ -14,7 +14,7 @@ function CardComponent(props) {
     <div className="flex card">
       {badgeText && <div className="badge-text">{badgeText}</div>}
       <img alt="card figure" className="card-image" src={props.image}></img>
-      <div className="card-body">
+      <div className="flex card-body">
         <div className="card-rating">
           <img alt="star-icon" className="card-star" src={starIcon}></img>
           <span>{props.rating}</span>
@@ -23,12 +23,9 @@ function CardComponent(props) {
             ({Math.floor(Math.random() * 100)}) • {props.location}
           </span>
         </div>
-        <div className="flex card-information">
-          <p>{props.description}</p>
-          <span>
-            <span className="card-price">From ${props.price} </span>/ person
-          </span>
-        </div>
+
+        <p>{props.description}</p>
+          <span className="card-price">From ${props.price} / person </span>
       </div>
     </div>
   );

@@ -3,7 +3,8 @@ import "./NavbarComponent.css";
 function NavbarComponent() {
   return (
     <nav className="navbar">
-      <img className="airbnb-logo" src={airbnbLogo} alt="airbnb-logo"></img>
+      <div className="airbnb-logo-container"><img className="airbnb-logo" src={airbnbLogo} alt="airbnb-logo"></img></div>
+
     </nav>
   );
 }
