@@ -7,14 +7,14 @@
   width: 100%;
   position: sticky;
   top: 0;
+  z-index: 3;
 }
 
 .airbnb-logo {
   width: 7rem;
-  
 }
 
-.airbnb-logo-container{
-  width:85%;
-  padding:0rem 0rem 0rem 8rem;
+.airbnb-logo-container {
+  width: 85%;
+  padding: 0rem 0rem 0rem 8rem;
 }

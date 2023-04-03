@@ -1,0 +1,30 @@
+.novedad-card {
+  max-width: 100%;
+  height: auto;
+}
+
+.novedad-card {
+  position: relative;
+}
+
+.novedad-card img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.novedad-card button {
+  position: absolute;
+  bottom: 0;
+  margin: 1.2rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border: none;
+  background: #ffffff;
+  padding: 0.6rem 1rem;
+}
+
+.image-text {
+  position: absolute;
+  color: white;
+  padding: 1.2rem;
+}

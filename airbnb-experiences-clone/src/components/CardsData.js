@@ -66,20 +66,22 @@ const experiencesCardsArray = [
   },
 ];
 
-export const novedadesArray = [{
-  id: 1,
-  image: nov1,
-  titulo: "Más populares en todo el mundo"
-}, {
-  id: 2,
-  image: nov2,
-  titulo: "Ideales para fomentarel espíritu de equipo"
-},
-{
-  id: 3,
-  image: nov3,
-  titulo: "Diversión para toda la família"
-}
-]
+export const novedadesArray = [
+  {
+    id: 1,
+    image: nov1,
+    titulo: "Más populares en todo el mundo",
+  },
+  {
+    id: 2,
+    image: nov2,
+    titulo: "Ideales para fomentar el espíritu de equipo",
+  },
+  {
+    id: 3,
+    image: nov3,
+    titulo: "Diversión para toda la família",
+  },
+];
 
 export default experiencesCardsArray;
