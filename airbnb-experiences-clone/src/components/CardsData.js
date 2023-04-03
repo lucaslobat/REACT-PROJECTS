@@ -1,14 +1,17 @@
 import image1 from "../images/card-image1.png";
 import image2 from "../images/card-image2.png";
 import image3 from "../images/card-image3.png";
+import image4 from "../images/exp2.jpg";
+import image5 from "../images/exp3.jpg";
+import image6 from "../images/exp4.jpg";
 
-const cards = [
+const cardsArray = [
   {
     id: 1,
     image: image1,
     rating: 5.0,
     location: "USA",
-    description: "Life lessons with Katie Zaferes",
+    description: "Lecciones para la vida con Katie Sepht",
     price: 136,
     openSpots: 0,
   },
@@ -17,7 +20,7 @@ const cards = [
     image: image2,
     rating: 5.0,
     location: "Online",
-    description: "Learn wedding photography",
+    description: "Aprende fotografía de bodas",
     price: 125,
     openSpots: 5,
   },
@@ -25,11 +28,38 @@ const cards = [
     id: 3,
     image: image3,
     rating: 4.8,
-    location: "USA",
-    description: "Group Mountain Biking",
+    location: "Estados Unidos",
+    description: "Grupo de Mountain Bike",
     price: 50,
+    openSpots: 10,
+  },
+  {
+    id: 4,
+    image: image4,
+    rating: 5.0,
+    location: "Estados Unidos",
+    description: "Descubre la soleada Fort Lauderdale",
+    price: 24,
+    openSpots: 0,
+  },
+  {
+    id: 5,
+    image: image5,
+    rating: 5.0,
+    location: "Italia",
+    description: "Planifica una aventura en Venecia con Giulia",
+    price: 30,
+    openSpots: 5,
+  },
+  {
+    id: 6,
+    image: image6,
+    rating: 4.96,
+    location: "Mexíco",
+    description: "Tu viaje a medida por Ciudad de México",
+    price: 2,
     openSpots: 10,
   },
 ];
 
-export default cards;
+export default cardsArray;

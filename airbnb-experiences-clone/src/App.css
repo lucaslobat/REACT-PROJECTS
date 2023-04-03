@@ -1,7 +1,3 @@
-.container {
-  height: 100vh;
-}
-
 .header {
   flex-direction: column;
   align-items: center;
@@ -9,6 +5,10 @@
 .cards-container {
   padding: 2rem;
   gap: 2rem;
-  width: 100%;
+  width: 80%;
   overflow: auto;
+}
+
+.experiences-section {
+  justify-content: center;
 }

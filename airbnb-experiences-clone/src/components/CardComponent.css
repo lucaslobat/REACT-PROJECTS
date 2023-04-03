@@ -26,17 +26,12 @@
   border-radius: 1rem;
 }
 
-/* .card-body {
-  display: column;
-} */
-
 .grey-rating {
   color: #918e9b;
 }
 
 .card-information {
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .card-price {
