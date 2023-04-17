@@ -3,6 +3,7 @@ import NavbarComponent from "./components/NavbarComponent";
 import NovedadComponent from "./components/NovedadComponent";
 import CardComponent from "./components/CardComponent";
 import experiencesCardsArray from "./components/CardsData";
+import FooterComponent from "./components/FooterComponent"
 import { novedadesArray } from "./components/CardsData";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <div className="flex cards-container">{cards}</div>
         </section>
       </section>
+      <FooterComponent/>
     </main>
   );
 }
