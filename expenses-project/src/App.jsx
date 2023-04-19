@@ -1,5 +1,6 @@
 import "./App.css";
 import ExpenseCard from "./components/expenseCard";
+import AddNewExpense from "./components/AddNewExpense";
 import Card from "./components/Card";
 
 function App() {
@@ -20,7 +21,12 @@ function App() {
     );
   });
 
-  return <Card className="flex container-card">{expenseInstances}</Card>;
+  return (
+    <Card className="flex container-card">
+      <AddNewExpense />
+      {expenseInstances}
+    </Card>
+  );
 }
 
 export default App;

@@ -1,7 +1,6 @@
 .container-card {
   flex-direction: column;
   justify-content: center;
-  height: 80%;
-  width: 80%;
-  background-color: #568ea6;
+  gap: 1rem;
+  background-color: #686c74;
 }
