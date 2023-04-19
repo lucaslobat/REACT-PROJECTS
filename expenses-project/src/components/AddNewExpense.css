@@ -1,0 +1,17 @@
+.new-expense {
+  background-color: white;
+  border-radius: 0.2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.new-expense-form {
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.inputContainer {
+  justify-content: space-between;
+  gap: 1rem;
+}
