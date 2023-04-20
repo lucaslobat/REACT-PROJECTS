@@ -2,23 +2,35 @@ import "./AddNewExpense.css";
 import { useState } from "react";
 
 const AddNewExpense = () => {
-  const [title, setTitle] = useState("");
+  /* const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(""); */
+
+  const [formObject, setFormObject] = useState({
+    title: "",
+    amount: "",
+    date: "",
+  });
 
   const titleChangeHandler = (event) => {
-    setTitle(event.target.value);
+    setFormObject((prevState) => {
+      return { ...prevState, title: event.target.value };
+    });
   };
 
   const amountChangeHandler = (event) => {
-    setAmount(event.target.value);
+    setFormObject((prevState) => {
+      return { ...prevState, amount: event.target.value };
+    });
   };
 
   const dateChangeHandler = (event) => {
-    setDate(event.target.value);
+    setFormObject((prevState) => {
+      return { ...prevState, date: event.target.value };
+    });
   };
 
-  console.log(title, amount, date);
+  console.log(formObject);
 
   return (
     <div className="flex new-expense">
