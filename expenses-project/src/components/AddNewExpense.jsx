@@ -2,10 +2,6 @@ import "./AddNewExpense.css";
 import { useState } from "react";
 
 const AddNewExpense = () => {
-  /* const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState("");
-  const [date, setDate] = useState(""); */
-
   const [formObject, setFormObject] = useState({
     title: "",
     amount: "",
@@ -30,23 +26,45 @@ const AddNewExpense = () => {
     });
   };
 
-  console.log(formObject);
+  const submitHandler = (event) => {
+    event.preventDefault();
+    setFormObject({
+      title: "",
+      amount: "",
+      date: "",
+    })
+    console.log(formObject);
+  }
+
 
   return (
     <div className="flex new-expense">
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="flex new-expense-form">
           <div className="flex inputContainer">
             <label>Title</label>
-            <input type="text" onChange={titleChangeHandler} />
+            <input 
+            type="text" 
+            onChange={titleChangeHandler}
+            value={formObject.title}
+             />
           </div>
           <div className="flex inputContainer">
             <label>Amount</label>
-            <input type="number" min="0.01" onChange={amountChangeHandler} />
+            <input 
+            type="number" 
+            onChange={amountChangeHandler}
+            value={formObject.amount}
+             />
           </div>
           <div className="flex inputContainer">
             <label>Date</label>
-            <input type="date" min="2023-01-01" onChange={dateChangeHandler} />
+            <input 
+            type="date" 
+            min="2023-01-01" 
+            onChange={dateChangeHandler}
+            value={formObject.date}
+             />
           </div>
         </div>
         <button type="submit">Add</button>
