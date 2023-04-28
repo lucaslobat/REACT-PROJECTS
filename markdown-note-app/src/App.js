@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
-
-/* ·········· Dependencies ·········· */
 import Split from "react-split";
-
-/* ·········· Components ·········· */
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
-
-/* ·········· Styles ·········· */
 import "./index.css";
 
 localStorage.clear();

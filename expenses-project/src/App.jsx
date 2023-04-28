@@ -3,6 +3,8 @@ import ExpenseCard from "./components/expenseCard";
 import AddNewExpense from "./components/AddNewExpense";
 import Card from "./components/Card";
 
+import { useState } from "react";
+
 function App() {
   const expenseObjects = [
     { id: "e1", date: "2023-03-25", title: "Mechanical Keyboard", amount: 52 },
@@ -10,7 +12,11 @@ function App() {
     { id: "e3", date: "2023-03-26", title: "Groceries Mercadona", amount: 45 },
   ];
 
-  const expenseInstances = expenseObjects.map((item) => {
+  const [expensesState, setExpensesState] = useState(expenseObjects);
+
+  console.log(expensesState);
+
+  const expenseInstances = expensesState.map((item) => {
     return (
       <ExpenseCard
         key={item.id}
@@ -23,7 +29,7 @@ function App() {
 
   return (
     <Card className="flex container-card">
-      <AddNewExpense />
+      <AddNewExpense setExpensesState = {setExpensesState}/>
       {expenseInstances}
     </Card>
   );

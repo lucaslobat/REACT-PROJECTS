@@ -5,7 +5,6 @@ import Card from "./Card";
 
 const ExpenseCard = (props) => {
   const [amount, setAmount] = useState(props.amount);
-  console.log("Component Reevaluated!");
 
   const clickHandler = () => {
     setAmount(() => "0.00");

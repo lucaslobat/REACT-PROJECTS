@@ -1,0 +1,11 @@
+.new-expense-form {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .inputContainer {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
