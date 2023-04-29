@@ -1,5 +1,4 @@
 import "./AddNewExpense.css";
-import { useState } from "react";
 import ExpenseForm from "./ExpenseForm.jsx";
 
 const AddNewExpense = ({setExpensesState}) => {

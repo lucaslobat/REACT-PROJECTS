@@ -2,6 +2,7 @@ import "./App.css";
 import ExpenseCard from "./components/expenseCard";
 import AddNewExpense from "./components/AddNewExpense";
 import Card from "./components/Card";
+import SelectYear from "./components/SelectYear";
 
 import { useState } from "react";
 
@@ -14,7 +15,6 @@ function App() {
 
   const [expensesState, setExpensesState] = useState(expenseObjects);
 
-  console.log(expensesState);
 
   const expenseInstances = expensesState.map((item) => {
     return (
@@ -30,6 +30,7 @@ function App() {
   return (
     <Card className="flex container-card">
       <AddNewExpense setExpensesState = {setExpensesState}/>
+      <SelectYear/>
       {expenseInstances}
     </Card>
   );
