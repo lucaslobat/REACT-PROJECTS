@@ -33,6 +33,7 @@ const ExpenseForm = ({setExpensesState}) => {
     setExpensesState( prevState => {
       return [...prevState,{...formObject,id:prevState.length + 1}]
     })
+    
     setFormObject({
       title: "",
       amount: "",
