@@ -1,13 +1,11 @@
-import { Temporal } from "@js-temporal/polyfill";
 import "./DateData.css";
 
-const DateData = (props) => {
-  const dateObj = Temporal.PlainDate.from(props.date);
+const DateData = ({date}) => {
   return (
     <div className="expense-date">
-      <div>{dateObj.day}/</div>
-      <div>{dateObj.month}/</div>
-      <div>{dateObj.year}</div>
+      <div>{date.day}/</div>
+      <div>{date.month}/</div>
+      <div>{date.year}</div>
     </div>
   );
 };
