@@ -1,15 +1,16 @@
 import Card from "../components/Card";
 import "./SelectYear.css";
 
-const SelectYear = () => {
-  const handleChange = (event) => {
-    console.log(event.target.value);
+const SelectYear = ({setSelectedYear,selectedYear}) => {
+
+  const selectedYearHandler = (event) => {
+    setSelectedYear(event.target.value);
   };
 
   return (
     <Card className="flex select-year">
       <span>Select by Year</span>
-      <select onChange={handleChange}>
+      <select onChange={selectedYearHandler} value={selectedYear}>
         <option value="2021">2021</option>
         <option value="2022">2022</option>
         <option value="2023">2023</option>

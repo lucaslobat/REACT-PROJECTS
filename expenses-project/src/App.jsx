@@ -14,6 +14,7 @@ function App() {
   ];
 
   const [expensesState, setExpensesState] = useState(expenseObjects);
+  const [selectedYear, setSelectedYear]  = useState("2021");
 
 
   const expenseInstances = expensesState.map((item) => {
@@ -30,7 +31,7 @@ function App() {
   return (
     <Card className="flex container-card">
       <AddNewExpense setExpensesState = {setExpensesState}/>
-      <SelectYear/>
+      <SelectYear setSelectedYear = {setSelectedYear} selectedYear = {selectedYear} />
       {expenseInstances}
     </Card>
   );
