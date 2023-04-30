@@ -1,5 +1,6 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
+import { Temporal } from "@js-temporal/polyfill";
 
 const ExpenseForm = ({setExpensesState}) => {
 
@@ -31,7 +32,8 @@ const ExpenseForm = ({setExpensesState}) => {
     event.preventDefault();
 
     setExpensesState( prevState => {
-      return [...prevState,{...formObject,id:prevState.length + 1}]
+      const temporalDate = Temporal.PlainDate.from(formObject.date)
+      return [...prevState,{...formObject,id:prevState.length + 1,date:temporalDate}]
     })
     
     setFormObject({
@@ -64,7 +66,7 @@ const ExpenseForm = ({setExpensesState}) => {
           <label>Date</label>
           <input
             type="date"
-            min="2023-01-01"
+            min="2021-01-01"
             onChange={dateChangeHandler}
             value={formObject.date}
           />
