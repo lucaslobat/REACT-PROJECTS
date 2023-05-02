@@ -32,20 +32,32 @@ function App() {
   const [expensesState, setExpensesState] = useState(EXPENSESOBJECTS);
   const [selectedYear, setSelectedYear] = useState("2021");
 
-  console.log(expensesState);
-
-  const expenseInstances = expensesState.map((item, index) => {
-    if (item.date.year == selectedYear) {
-      return (
-        <ExpenseCard
-          key={index}
-          date={item.date}
-          title={item.title}
-          amount={item.amount}
-        />
-      );
-    }
+  const filteredExpenses = expensesState.filter((expense) => {
+    return expense.date.year.toString() == selectedYear;
   });
+
+  const filteredExpensesInstances = filteredExpenses.map((item,index) => {
+    return <ExpenseCard
+      key={index}
+      date={item.date}
+      title={item.title}
+      amount={item.amount}
+    />
+ 
+  });
+
+
+ /*  const expenseInstances = expensesState.map((item, index) => {
+    return (
+      <ExpenseCard
+        key={index}
+        date={item.date}
+        title={item.title}
+        amount={item.amount}
+      />
+    );
+  }); */
+
 
   return (
     <Card className="flex container-card">
@@ -54,7 +66,7 @@ function App() {
         setSelectedYear={setSelectedYear}
         selectedYear={selectedYear}
       />
-      {expenseInstances}
+      {filteredExpensesInstances.length === 0 ? <p>No expenses found</p> : filteredExpensesInstances}
     </Card>
   );
 }

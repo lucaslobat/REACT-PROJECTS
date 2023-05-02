@@ -2,9 +2,7 @@ import Card from "../components/Card";
 import "./SelectYear.css";
 
 const SelectYear = ({setSelectedYear,selectedYear}) => {
-
-
-  console.log(selectedYear);
+  
   const selectedYearHandler = (event) => {
     setSelectedYear(event.target.value);
   };
